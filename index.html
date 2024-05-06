@@ -1,19 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrimonio Cultural</title>
-</head>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendario Cultural de San Martín de Los Andes</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./templates/css/index.css">
+    </head>
 <body>
-    <!-- Encabezado -->
-    <header class="header">
+    <header id="header">
+        <a href="index.html">
+            <img src="escudo-institucion.png" alt="Escudo de la Institución" id="institution-emblem">
+        </a>
+        <div id="menu">
+            <div id="logo" class="logo">
+                <img src="" id="" class="" alt="">
+            </div>
+            <div id="search-navigation" class="search-navigation">
+                <div class="search-navigation-inner">
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="./templates/blog.html">Nuestro Blog</a></li>
+                            <li><a href="./templates/news.html">Ultimas Noticias</a></li>
+                            <li><a href="./templates/eventos.html">Eventos Culturales</a></li>
+                            <li><a href="#">Contactos</a></li>
+                            <li id="search-header" class="search-header">
+                                <form role="search" method="get" class="search-form" action="">
+                                    <label>
+                                        <input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s" />
+                                    </label>
+                                    <li class="search-icon">
+                                        <a href="#">
+                                            <img src="./static/img/lupa.png" alt="Buscar">
+                                        </a>
+                                    </li>
+                                </form>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bar">
+            <img src="./static/img/barra_down.png" alt="barra">
     </header>
-    <!-- Contenido -->
     <main>
+    </div>
+    <div class="slide">
+        <div class="slide-inner">
+            <input class="slide-open" type="radio" id="slide-1" name="slide" hidden="" checked="checked">
+            <div class="slide-item">
+                <img src="./static/img/1.png"  alt="...">
+            </div>
+            <input class="slide-open" type="radio" id="slide-2" name="slide" hidden="">
+            <div class="slide-item">
+                <img src="./static/img/2.png"  alt="...">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" name="slide" hidden="">
+            <div class="slide-item">
+                <img src="./static/img/3.png"  alt="...">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1">‹</label>
+            <label for="slide-2" class="slide-control next control-1">›</label>
+            <label for="slide-1" class="slide-control prev control-2">‹</label>
+            <label for="slide-3" class="slide-control next control-2">›</label>
+            <label for="slide-2" class="slide-control prev control-3">‹</label>
+            <label for="slide-1" class="slide-control next control-3">›</label>
+            <ol class="slide-indicador">
+                <li>
+                    <label for="slide-1" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-2" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-3" class="slide-circulo">•</label>
+                </li>
+            </ol>
+        </div>
+    </div>
     </main>
-    <!-- pie -->
     <footer>
+            <a href="" target="_blank"><i class="" sizes="32x32"></i></b>
+            <a href="" target="_blank"><i class="" sizes="32x32"></i></a>
+        <div class="bar">
+            <img src="./static/img/barr_up.png" alt="barra">
+        </div>
     </footer>
 </body>
 </html>
