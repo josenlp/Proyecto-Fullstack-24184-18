@@ -66,29 +66,33 @@ ul.menu li a:hover {
   margin-top: 10px;
   margin-right: 50px;
   margin-left: 50px;
-  height: 15%;
+  height: 650px;
 }
 .slide-inner {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: calc( 300px + 3em);
+  height: 100%;
 }
 .slide-open:checked + .slide-item {
   position: static;
   opacity: 100;
 }
+
 .slide-item {
   position: absolute;
   opacity: 0;
   -webkit-transition: opacity 0.6s ease-out;
   transition: opacity 0.6s ease-out;
 }
+
 .slide-item img {
   display: block;
-  height: auto;
+  height: 100%;
   width: 100%;
   justify-content: center;
+  object-fit: cover;
+  object-position: center;
 }
 
 .slide-control {
@@ -440,4 +444,81 @@ footer {
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+/* Contacto */
+
+/*  elementos de entrada de texto, select y areas de texto */
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* etiqueta*/
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* el boton de envio */
+input[type=submit] {
+  background-color: #FFBD59;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* efecto de hover */
+input[type="submit"]:hover {
+  background-color: #88A843; /* Cambia el color de fondo en hover */
+  color: #f1f1f1; /* Cambia el color del texto en hover */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Columna flotante para etiquetas: ancho del 25% */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Columna flotante para entradas: ancho del 75%  */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Limpiar despues de las columnas */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Diseño responsivo */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
 }
