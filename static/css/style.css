@@ -1,4 +1,3 @@
-
 :root {
     --bg-color:#ffffff;
     --primary-color:#030303;
@@ -17,8 +16,8 @@
   
 body{
     background-color: var(--bg-color);
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 2.60vw;
+    margin-right: 2.60vw;
     font-family: "Quicksand", sans-serif;
     min-height: 100vh;
     display: flex;
@@ -32,7 +31,7 @@ body{
     align-items:center;
     font-size: 1.5vw;
     justify-content: space-between;
-    padding:  10px;
+    padding:  0.52vw;
   }
 ul.menu {
     list-style: none;
@@ -46,7 +45,7 @@ ul.menu li a {
     display: block;
     text-decoration: none;
     color: var(--primary-color);
-    padding: 10px 20px;
+    padding: 0.52vw 1.04vw;
     transition: color 0.3s;
   }
 ul.menu li a:hover {
@@ -54,17 +53,17 @@ ul.menu li a:hover {
   }
   
 .search-container {
-    margin-top: 20px;
+    margin-top: 1.04vw;
     display: flex;
     align-items: center;
 }
 
 #searchInput {
-    height: 40px;
-    width: 300px;
+    height: 2.08vw;
+    width: 15.63vw;
     flex: 1;
     border: 1px solid #ccc;
-    margin-right: 5px;
+    margin-right: 0.26vw;
 }
 
 .search-header button {
@@ -75,8 +74,8 @@ ul.menu li a:hover {
 }
 
 .fass {
-    width: 40px;
-    height: 40px;
+    width: 2.08vw;
+    height: 2.08vw;
 }
 
 /*Ultimas Noticias*/
@@ -96,10 +95,10 @@ ul.menu li a:hover {
   }
 .slide {
     position: relative;
-    margin-top: 10px;
-    margin-right: 50px;
-    margin-left: 50px;
-    height: 400px;
+    margin-top: 0.52vw;
+    margin-right: 2.60vw;
+    margin-left: 2.60vw;
+    height: 20.84vw;
 }
 .slide-inner {
     position: relative;
@@ -131,13 +130,13 @@ ul.menu li a:hover {
     cursor: pointer;
     display: none;
     font-size: 2rem;
-    height: 40px;
-    line-height: 40px;
+    height: 2.08vw;
+    line-height: 2.08vw;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-    width: 40px;
+    width: 2.08vw;
     z-index: 10;
 }
 .slide-control.prevNews {
@@ -163,7 +162,7 @@ ul.menu li a:hover {
 }
 .slide-indicador li {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 0.26vw;
 }
 .slide-circulo {
     color: var(--fifth-color);
@@ -197,7 +196,7 @@ ul.menu li a:hover {
   }
 .card {
     width: 25%;
-    margin: 20px;
+    margin: 1.04vw;
     background-color: var(--secondary-color);
     border-radius: 5px;
     box-shadow: 10px 0 20px rgb(88, 86, 94);
@@ -239,7 +238,7 @@ ul.menu li a:hover {
   }
 .title h1 {
     font-family: "Young Serif", serif;
-    font-size: 70pt;
+    font-size: 4.861vw;
     letter-spacing: 4px;
     text-align: center;
   }
@@ -290,7 +289,7 @@ tr {
   }
 .note_tex{
     font-family: "Quicksand", sans-serif;
-    font-size: 12pt;
+    font-size: 0.833vw;
     text-align: justify;
     margin-top: -5rem;
     color: var(--primary-color);
@@ -325,7 +324,7 @@ tr {
 }
 .iconRedes {
   color: var(--secondary-color);
-  margin-right: 10px;
+  margin-right: 0.52vw;
 }
 .list {
   padding:0 5rem 0 5rem;
@@ -345,6 +344,59 @@ tr {
   padding: 3rem 1rem 0 0;
 }
 
+@media  (max-width:768px) {
+    .menu {
+        font-size: 4vw;
+        display:flex;
+        flex-direction: column;
+      }
+    ul.menu li a {
+      align-items: center;
+      justify-content: center;
+      padding: 0.52vw;
+    }
+    .search-container {
+        margin-top: 2vw;
+    }
+    #searchInput {
+        height: 4vw;
+        width: 40vw;
+        margin-right: 1vw;
+    }
+    .search-header button {
+        height: 4vw;
+    }
+    .tarjeta{
+      display:flex;
+      flex-direction: column;
+    }
+    .tarjeta .card {
+      width: 100%;
+    }
+    .note_title,
+    .detail,
+    .card1,
+    .card2,
+    .note_tex {
+        width: 100%;
+    }
+    .card2 img {
+        max-width: 100%;
+        height: auto;
+    }
+    table {
+      margin: 0;
+    }
+    table th,
+    table td {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+      text-align: justify;
+      font-size: 4vw;
+    }
+}
 /*Eventos*/
 
 #eventos-culturales {
