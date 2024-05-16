@@ -42,3 +42,48 @@ function toggleCountryInput(select) {
       otherCountryInput.style.display = 'none';
   }
 }
+
+//ultimas Noticias carrousel//
+document.addEventListener('DOMContentLoaded', function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide-open');
+    const totalSlides = slides.length;
+
+    setInterval(() => {
+        slides[currentIndex].checked = false;
+        currentIndex = (currentIndex + 1) % totalSlides;
+        slides[currentIndex].checked = true;
+    }, 4000);
+});
+
+//barra buscadora//
+function searchFiles() {
+  var searchText = document.getElementById("searchInput").value.toLowerCase();
+  var elements = document.getElementsByTagName("*");
+
+  var searchResults = [];
+
+  for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      if (element.nodeType === 3) { 
+          var text = element.textContent.toLowerCase();
+          if (text.includes(searchText)) {
+              searchResults.push(element.parentNode);
+          }
+      }
+  }
+
+  var searchResultsContainer = document.getElementById("searchResults");
+  searchResultsContainer.innerHTML = "";
+
+  if (searchResults.length > 0) {
+      searchResults.forEach(function(result) {
+          var resultItem = document.createElement("div");
+          resultItem.textContent = result.textContent;
+          searchResultsContainer.appendChild(resultItem);
+      });
+  } else {
+      searchResultsContainer.textContent = "No se encontraron resultados.";
+  }
+}
+
