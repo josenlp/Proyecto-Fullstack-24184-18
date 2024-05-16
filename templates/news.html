@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario_Cultural:Noticias</title>
-    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <title>Clendario Cultural: Ultimas Noticias</title>
+    <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
-
+    <script src="../static/js/script.js"></script>
 </head>
     <body>
     <header id="header">
@@ -48,17 +48,17 @@
         </div>
         <div class="slide">
             <div class="slide-inner">
-                <input class="slide-open" type="radio" id="slide-1" name="slide" hidden="" checked="checked">
+                <input class="slide-open" type="radio" id="slide-1" name="slide" hidden checked="checked">
                 <div class="slide-item">
-                    <img src="../static/img/1.png"  alt="cine" herf="./noticia_1.html">
+                    <img src="../static/img/1.png" alt="cine">
                 </div>
-                <input class="slide-open" type="radio" id="slide-2" name="slide" hidden="">
+                <input class="slide-open" type="radio" id="slide-2" name="slide" hidden>
                 <div class="slide-item">
-                    <img src="../static/img/2.png"  alt="importante" herf="./noticia_3.html">
+                    <img src="../static/img/2.png" alt="importante">
                 </div>
-                <input class="slide-open" type="radio" id="slide-3" name="slide" hidden="">
+                <input class="slide-open" type="radio" id="slide-3" name="slide" hidden>
                 <div class="slide-item">
-                    <img src="../static/img/noticias_2.png"  herf="./noticia_2.html" alt="otras noticias">
+                    <img src="../static/img/noticias_2.png" alt="otras noticias">
                 </div>
                 <label for="slide-3" class="slide-control prevNews control-1">‹</label>
                 <label for="slide-2" class="slide-control nextNews control-1">›</label>
@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="bar">
-        <img src="../static/img/barr_up.png" alt="barra">
+            <img src="../static/img/barr_up.png" alt="barra">
         </div>
     </header>
     <main>
@@ -94,12 +94,12 @@
                 </a>
             </div>
             <div class="card">
-                <a herf="./noticia_2.html">
+                <a href="./noticia_2.html">
                     <img src="../static/img/noticias_2.png" alt="importante" >
                 </a>
             </div>
             <div class="card">
-                <a herf="./noticia_3.html">
+                <a href="./noticia_3.html">
                     <div class="content">
                         <h2>Otras Noticias</h2>
                     </div>
@@ -115,6 +115,10 @@
             <a href="" target="_blank"><i class="" sizes="32x32"></i></a>
         <div class="bar">
             <img src="../static/img/barr_up.png" alt="barra">
+        </div>
+    </footer>
+</body>
+</html>
         </div>
     </footer>
 </body>
