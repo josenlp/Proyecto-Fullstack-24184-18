@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<htm lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clendario Cultural: Ultimas Noticias</title>
+    <link rel="shortcut icon" href="./static/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js"></script>
+</head>
+    <body>
+    <header id="header">
+        <div id="menu">
+            <div id="logo" class="logo">
+                <img src="../static/img/logo_cultura_2.png" id="" class="" alt="Logo" class="logo-img">
+            </div>
+            <div id="search-navigation" class="search-navigation">
+                <div class="search-navigation-inner">
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="../index.html" target="_blank">Inicio</a></li>
+                            <li><a href="../templates/news.html" target="_blank">Ultimas Noticias</a></li>
+                            <li><a href="../templates/eventos.html" target="_blank">Eventos Culturales</a></li>
+                            <li><a href="../templates/contactanos.html" target="_blank">Contactanos</a></li>
+                            <li id="search-header" class="search-header">
+                                <div class="search-container">
+                                    <input type="text" id="searchInput" placeholder="Buscar...">
+                                    <button onclick="searchFiles()" class="search-button">
+                                        <img src="../static/img/lupa.ico" alt="Buscar" class="search-icon">
+                                    </button>
+                                </div>
+                                <div id="searchResults"></div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bar">
+            <img src="../static/img/barra_down.png" alt="barra">
+        </div>
+        <div class="newsTitle">
+            <h1>Ultimas Noticias</h1>
+        </div>
+        <div class="slide">
+            <div class="slide-inner">
+                <input class="slide-open" type="radio" id="slide-1" name="slide" hidden checked="checked">
+                <div class="slide-item">
+                    <img src="../static/img/1.png" alt="cine">
+                </div>
+                <input class="slide-open" type="radio" id="slide-2" name="slide" hidden>
+                <div class="slide-item">
+                    <img src="../static/img/2.png" alt="importante">
+                </div>
+                <input class="slide-open" type="radio" id="slide-3" name="slide" hidden>
+                <div class="slide-item">
+                    <img src="../static/img/noticias_2.png" alt="otras noticias">
+                </div>
+                <label for="slide-3" class="slide-control prevNews control-1">‹</label>
+                <label for="slide-2" class="slide-control nextNews control-1">›</label>
+                <label for="slide-1" class="slide-control prevNews control-2">‹</label>
+                <label for="slide-3" class="slide-control nextNews control-2">›</label>
+                <label for="slide-2" class="slide-control prevNews control-3">‹</label>
+                <label for="slide-1" class="slide-control nextNews control-3">›</label>
+                <ol class="slide-indicador">
+                    <li>
+                        <label for="slide-1" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                        <label for="slide-2" class="slide-circulo">•</label>
+                    </li>
+                    <li>
+                        <label for="slide-3" class="slide-circulo">•</label>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="bar">
+            <img src="../static/img/barr_up.png" alt="barra">
+        </div>
+    </header>
+    <main>
+        <div class="tarjeta">
+            <div class="card">
+                <a href="./noticia_1.html">
+                    <div class="content">
+                        <h3>Cine Club a beneficio de la Asociación Italiana</h3>
+                    </div>
+                    <img src="../static/img/noticias_1.png" alt="foto de pareja en blanco y negro que representa a los protagonistas de la película">
+                </a>
+            </div>
+            <div class="card">
+                <a href="./noticia_2.html">
+                    <img src="../static/img/noticias_2.png" alt="importante" >
+                </a>
+            </div>
+            <div class="card">
+                <a href="./noticia_3.html">
+                    <div class="content">
+                        <h2>Otras Noticias</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="bar">
+            <img src="../static/img/barra_down.png" alt="barra">
+        </div>
+            <a href="" target="_blank"><i class="" sizes="32x32"></i></b>
+            <a href="" target="_blank"><i class="" sizes="32x32"></i></a>
+        <div class="bar">
+            <img src="../static/img/barr_up.png" alt="barra">
+        </div>
+    </footer>
+</body>
+</html>
