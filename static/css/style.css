@@ -24,6 +24,10 @@ body{
 header {
   width: 100%;
 }
+
+footer {
+  width: 100%;
+}
 .logo img {
   display: block;
   margin: 0 auto;
@@ -35,7 +39,7 @@ header {
   display: flex;
   flex-direction:row;
   align-items:center;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   justify-content: space-between;
   padding:  0.52vw;
   text-decoration: none;
@@ -58,7 +62,34 @@ ul.menu li a {
 ul.menu li a:hover {
   color: var(--secondary-color);
   }
-  
+.menu-footer {
+  text-align: right; /* Alinea el texto a la derecha */
+  font-size: 1vw;
+  padding: 0.52vw;
+  font-size: 1vw;
+  justify-content: space-between;
+  padding:  0.52vw;
+  text-decoration: none;
+  }
+ul.menu-footer {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+ul.menu-footer li {
+  display: inline-block;
+  }
+ul.menu-footer li a {
+  display: block;
+  text-decoration: none;
+  color: var(--primary-color);
+  padding: 0.52vw 1.04vw;
+  transition: color 0.3s;
+  }
+ul.menu-footer li a:hover {
+  color: var(--secondary-color);
+  }
+
 .search-container {
   margin-top: 1.04vw;
   display: flex;
