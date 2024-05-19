@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos Culturales</title>
+    <title>Contactanos</title>
     <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
                         <ul class="menu">
                             <!-- Hipervinculos para el menu -->
                             <li><a href="../index.html">Inicio</a></li>
-                            <li><a href="./news.html">Ultimas Noticias</a></li>
+                            <li><a href="./news.html">Últimas Noticias</a></li>
                             <li><a href="./eventos.html">Eventos Culturales</a></li>                            
                             <li><a href="./contactanos.html">Contactanos</a></li>
                             <li id="search-header" class="search-header">
@@ -35,7 +35,7 @@
                                     </label>
                                     <li class="search-icon">
                                         <a href="#">
-                                            <img src="../static/img/lupa.png" alt="Buscar">
+                                            <img src="../static/img/lupa.ico" alt="Buscar">
                                         </a>
                                     </li>
                                 </form>
@@ -48,34 +48,44 @@
         <div class="bar">
             <img src="../static/img/barra_down.png" alt="barra">
         </div>
-        <div id="eventos-culturales">
+        <div class="newsTitle">
             <h1>Contactanos</h1>
         </div>
     </header>
+    <main>
     <div class="container">
-        <form action="action_page.php">
+        <form id="miFormulario" method="post">
           <div class="row">
-            <div class="col-25">
-              <label for="fname">Nombre</label>
+            <div class="columna-25">
+              <label for="nombre">Nombre</label>
             </div>
-            <div class="col-75">
-              <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+            <div class="columna-75">
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..">
             </div>
           </div>
           <div class="row">
-            <div class="col-25">
-              <label for="lname">Apellido</label>
+            <div class="columna-25">
+              <label for="apellido">Apellido</label>
             </div>
-            <div class="col-75">
-              <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+            <div class="columna-75">
+              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido..">
             </div>
           </div>
           <div class="row">
-            <div class="col-25">
-              <label for="country">Pais</label>
+            <div class="columna-25">
+              <label for="email">email</label>
             </div>
-            <div class="col-75">
-              <select id="country" name="country" onchange="toggleCountryInput(this)">
+            <div class="columna-75">
+              <input type="text" id="email" name="email" placeholder="Tu email..">
+            </div>
+          </div>
+          <div class="row">
+            <div class="columna-25">
+              <label for="pais">Pais</label>
+            </div>
+            <div class="columna-75">
+              <select id="pais" name="pais" onchange="alternarEntradaPais(this)">
+                <option value="default">Seleccione un pais</option>
                 <option value="argentina">Argentina</option>
                 <option value="bolivia">Bolivia</option>
                 <option value="brasil">Brasil</option>
@@ -87,22 +97,54 @@
                 <option value="francia">Francia</option>
                 <option value="uruguay">Uruguay</option>
                 <option value="usa">USA</option>
-                <option value="otro">Otro</option>
+                <option value="otro">otro</option>
               </select>
               <!-- Campo de entrada oculto para ingresar un país manualmente -->
-              <input type="text" id="otherCountry" name="otherCountry" placeholder="Ingrese el país" style="display: none;">
+              <input type="text" id="otroPais" name="otroPais" placeholder="Ingrese el país" style="display: none;">
             </div>
           </div>
           <div class="row">
-            <div class="col-25">
-              <label for="subject">Dejanos tu comentario</label>
+            <div class="columna-25">
+              <label for="comentario">Dejanos tu comentario</label>
             </div>
-            <div class="col-75">
-              <textarea id="subject" name="subject" placeholder="Escribe aqui.." style="height:200px"></textarea>
+            <div class="columna-75">
+              <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario aqui.." style="height:200px"></textarea>
             </div>
           </div>
           <div class="button-container">
             <input type="submit" value="Enviar">
           </div>
+          <div id="error" class="error"></div> <!-- Contenedor para los mensajes de error -->
         </form>
+    </div>
+    <div class="contact-info">
+      <div class="contact-column">
+          <img src="../static/img/whatsapp.png" alt="WhatsApp">
+          <p>+123 456 7890</p>
       </div>
+      <div class="contact-column">
+          <img src="../static/img/email_icon.png" alt="Email">
+          <p>info@espaciocultural.com</p>
+      </div>
+      <div class="contact-column">
+          <img src="../static/img/location_icon.png" alt="Dirección">
+          <p>Gral. Roca 310, San Martín de los Andes, Neuquén</p>
+      </div>
+  </div>
+    </main>
+    <footer id="footer">
+      <div class="bar">
+          <img src="../static/img/barr_up.png" alt="barra">
+      </div>
+      <div class="menu-footer">
+          <nav>
+              <ul class="menu-footer">
+                  <li><a href="./quienes_somos.html">Quienes somos</a></li>
+                  <li><a href="./preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+                  <li><a href="./contactanos.html">Contacto</a></li>
+              </ul>
+          </nav>
+      </div>
+  </footer>
+</body>
+</html>

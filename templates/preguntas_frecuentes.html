@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<htm lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario_Cultural:Noticias</title>
+    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div id="logo" class="logo">
+            <img src="../static/img/logo_cultura_2.png" alt="Logo" class="logo-img">
+        </div>
+        <div id="menu">
+            <div id="search-navigation" class="search-navigation">
+                <div class="search-navigation-inner">
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="../index.html">Inicio</a></li>
+                            <li><a href="../templates/news.html">Últimas Noticias</a></li>
+                            <li><a href="../templates/eventos.html">Eventos Culturales</a></li>
+                            <li><a href="../templates/contactanos.html">Contáctanos</a></li>
+                            <li id="search-header" class="search-header">
+                                <div class="search-container">
+                                    <input type="text" id="searchInput" placeholder="Buscar...">
+                                    <button onclick="searchFiles()" class="search-button">
+                                        <img src="../static/img/lupa.ico" alt="Buscar" class="search-icon">
+                                    </button>
+                                </div>
+                                <div id="searchResults"></div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bar">
+            <img src="../static/img/barra_down.png" alt="barra">
+        </div>
+        <div class="title">
+            <h1>Últimas Noticias</h1>
+        </div>
+        <div class="bar">
+            <img src="../static/img/barr_up.png" alt="barra">
+        </div>
+    </header>
+    <body>
+        <main class="faqs">
+            <div class="faqs-image">
+                <img src="../static/img/faqs.jpg" alt="Imagen pregunta">
+            </div>
+            <div class="faqs-container">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-item">
+                    <h3>¿Cuáles son los horarios de las proyecciones de películas?</h3>
+                    <p>Nuestros horarios de proyección varían según la programación. Te recomendamos visitar nuestra sección de "Eventos" para consultar los horarios actualizados.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Qué tipo de obras de teatro se presentan en este espacio?</h3>
+                    <p>En nuestro espacio cultural, ofrecemos una amplia variedad de obras de teatro, desde clásicos hasta producciones contemporáneas. Nuestra programación cambia regularmente, así que te recomendamos estar atento a nuestras próximas funciones.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Cómo puedo exhibir mi obra de arte en este espacio?</h3>
+                    <p>Si estás interesado en exhibir tu obra de arte en nuestro espacio cultural, por favor envía tu portafolio y propuesta a nuestro correo electrónico de contacto: info@nombredelespaciocultural.com. Nos pondremos en contacto contigo para discutir las oportunidades de exhibición.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>¿Hay algún costo asociado a las proyecciones de películas o las obras de teatro?</h3>
+                    <p>El costo de las proyecciones de películas y las obras de teatro puede variar según el evento. Algunas de nuestras presentaciones son gratuitas, mientras que otras pueden requerir la compra de entradas. Te recomendamos consultar la información específica de cada evento en nuestra página web o en la taquilla del espacio cultural.</p>
+                </div>
+            </div>
+    </main>
+    <footer id="footer">
+        <div class="bar">
+            <img src="../static/img/barr_up.png" alt="barra">
+        </div>
+        <div class="menu-footer">
+            <nav>
+                <ul class="menu-footer">
+                    <li><a href="./quienes_somos.html">Quienes somos</a></li>
+                    <li><a href="./preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+                    <li><a href="./contactanos.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
