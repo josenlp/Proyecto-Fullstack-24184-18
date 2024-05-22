@@ -63,7 +63,7 @@ ul.menu li a:hover {
   color: var(--secondary-color);
   }
 .menu-footer {
-  text-align: right; /* Alinea el texto a la derecha */
+  text-align: right;
   font-size: 1vw;
   padding: 0.52vw;
   font-size: 1vw;
@@ -119,7 +119,7 @@ ul.menu-footer li a:hover {
 /*Ultimas Noticias*/
 .newsTitle{
     font-family: "Young Serif", serif;
-    font-size: 2 vw; /* font-size: 3.5vw;*/
+    font-size: 3.5vw;
     letter-spacing: 4px;
     text-align: center;
     color:var(--secondary-color)
@@ -580,7 +580,7 @@ ul.menu li a {
   display: none;
 }
 .imagen-slider:first-child {
-  display: block; /* Muestra la primera imagen por defecto */
+  display: block;
 }
 
 .imagen-slider img {
@@ -651,7 +651,7 @@ ul.menu li a {
 }
 
 .info-text ul {
-  list-style-type: none; /* Elimina los bullets */
+  list-style-type: none;  
   margin: 0; 
   padding: 0;
 }
