@@ -111,15 +111,11 @@ ul.menu-footer li a:hover {
     cursor: pointer;
 }
 
-.fass {
-    width: 2.08vw;
-    height: 2.08vw;
-}
 
 /*Ultimas Noticias*/
 .newsTitle{
     font-family: "Young Serif", serif;
-    font-size: 3.5vw;
+    font-size: 3.5 vw;
     letter-spacing: 4px;
     text-align: center;
     color:var(--secondary-color)
@@ -168,32 +164,25 @@ ul.menu-footer li a:hover {
 }
 
 .slide-control {
-  border-radius: 50%;
-  color: var(--primary-color);
   cursor: pointer;
-  display: none;
-  font-size: 2rem;
-  height: 2.08vw;
-  line-height: 2.08vw;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  width: 2.08vw;
-  z-index: 10;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--fourth-color);
+  font-weight: bold;
+  font-size: 2rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.nextNews {
+  left: 97%;
 }
 
-.slide-control.prevNews {
-  left: 20px;
-}
-
-.slide-control.nextNews {
-  right: 20px;
-}
-
-.slide-control:hover {
-  background: var(--secondary-color);
-  color: var(--third-color);
+.prevNews:hover, .nextNews:hover  {
+  background-color:  var(--secondary-color);
 }
 
 .slide-indicador {
@@ -302,7 +291,7 @@ ul.menu-footer li a:hover {
   }
 .title h1 {
     font-family: "Young Serif", serif;
-    font-size: 2 vw; /*font-size: 4.861vw;*/
+    font-size: 4.861vw;
     letter-spacing: 4px;
     text-align: center;
   }
@@ -317,6 +306,7 @@ ul.menu-footer li a:hover {
     text-decoration: underline;
     margin-bottom: 1.5rem;
   }
+
 /*articulos*/
 .detail {
     display: grid;
@@ -354,6 +344,8 @@ ul.menu-footer li a:hover {
   }
 .card2 img{
     margin-left: -10rem;
+    height:100%;
+    width: fit-content;
     top: 0;
     bottom: 0;
   }
@@ -365,14 +357,8 @@ ul.menu-footer li a:hover {
   .imgN3 { 
     width: 100%;
     height: auto;
+  }
 
-  }
-  
-  .iconRedes {
-    color: var(--secondary-color);
-    font-size: 3rem;
-    margin: 0 0.5rem;
-  }
 .note_tex {
   grid-column: span 6;
   grid-row: span 6;
@@ -406,7 +392,116 @@ ul.menu-footer li a:hover {
   padding-bottom: 5rem;
   font-size: 1.5vw;
 }
+.navegacion {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.anterior, .siguiente {
+  flex: 1;
+  text-align: center;
+}
+.anterior a, .siguiente a {
+  display: inline-block;
+  font-size: 1.5vw;
+  text-decoration: none;
+  color: var(--fourth-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.anterior a:hover, .siguiente a:hover {
+  background-color: var(--secondary-color);
+}
+.share-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 3rem;
+}
 
+.share-button {
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 2rem;
+  transition: background-color 0.3s ease;
+}
+.share-button img {
+  width: 25px;
+}
+
+.share-button:hover {
+  opacity: 0.8;
+}
+
+@media  (max-width:768px) {
+  .menu {
+    font-size: 4vw;
+    display:flex;
+    flex-direction: column;
+  }
+ul.menu li a {
+  align-items: center;
+  justify-content: center;
+  padding: 0.52vw;
+}
+.search-container {
+    margin-top: 2vw;
+}
+#searchInput {
+    height: 4vw;
+    width: 40vw;
+    margin-right: 1vw;
+}
+.search-header button {
+    height: 4vw;
+}
+.tarjeta{
+  display:flex;
+  flex-direction: column;
+}
+.tarjeta .card {
+  width: 100%;
+}
+.title {
+  margin: 0;
+}
+.note_title,
+.detail,
+.card1,
+.card2,
+.note_tex {
+    width: 100%;
+}
+.card2 img {
+    max-width: 100%;
+    height: auto;
+}
+.detail {
+  grid-template-columns: 1fr;
+  grid-row: auto;
+  margin: 0;
+  padding: 0;
+}
+.card1{
+  margin: 0;
+}
+.note_tex p {
+  font-size: 3vw;
+  text-align: center;
+}
+.note_tex2 {
+  font-size: 3vw;
+  }
+.card2{
+  margin-left: 0;
+  }
+.card2 img{
+    margin-left: -4rem;
+  }
+  .agradecimiento p{
+    font-size: 3vw;
+  }
+}
 @media  (max-width:768px) {
   .menu {
     font-size: 4vw;
