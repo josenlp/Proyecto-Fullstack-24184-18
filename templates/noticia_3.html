@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario_Cultural:Noticias</title>
-    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <title>Ultimas Noticias</title>
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
-    <script src="../static/js/script.js"></script>
 </head>
     <body>
     <header id="header">
@@ -58,10 +57,18 @@
                 </li>
             </ul>
         </div>
-        <div>
-            <a href="#"><i class="fa fa-instagram iconRedes"></i></a>
-            <a href="#"><i class="fa fa-facebook-square iconRedes"></i></a>
-            <a href="mailto:correo@dominio.com?subject=Asunto del correo&body=Cuerpo del correo"><i class="fa fa-envelope iconRedes"></i></a>
+        <div class="social-media">
+            <div class="share-buttons">
+                <a href="https://www.instagram.com/" id="share-instagram" class="share-button" target="_blank">
+                    <img src="../static/img/instagram.ico" alt="Instagram" class="instagram-icon"></a>
+                <a href="https://www.facebook.com/" id="share-facebook" class="share-button" target="_blank">
+                    <img src="../static/img/facebook.ico" alt="Facebook" class="facebook-icon"></a>
+                <a href="https://web.whatsapp.com/" id="share-whatsapp" class="share-button" target="_blank">
+                    <img src="" alt="WhatsApp" class="whatsapp-icon"></a>
+                <a href="mailto:?subject=Título del correo&body=Contenido del correo" id="share-email" class="share-button" target="_blank">
+                    <img src="" alt="mail" class="email-icon">
+                </a>
+            </div>
         </div>
         <div class="detail">
             <div class="card3">
@@ -71,6 +78,14 @@
                 <p>La Secretaría de Cultura inició el registro e identificación de las obras de arte que forman parte del patrimonio municipal. Son obras de diferentes artistas, realizadas desde la década del 40 hasta el presente. Algunas están exhibidas en dependencias municipales, mientras que otras permanecen a resguardo.</p><br>
                 <p>El trabajo se realiza en forma conjunta entre el Departamento de Patrimonio Histórico y la Sala Lidaura Chapitel. Si bien este patrimonio ya posee un inventario, faltaban fichas catalográficas y otras estaban incompletas.</p><br>
                 <p>Registrar y reacondicionar el patrimonio artístico permite contar con un diagnóstico del estado de conservación de las obras y también servirá para difundirlas, ya que se trata de un acervo histórico que pertenece a toda la comunidad.</p><br>
+            </div>
+        </div>
+        <div class="navegacion">
+            <div class="anterior">
+                <a href="./noticia_2.html" target="_blank">Anterior</a>
+            </div>
+            <div class="siguiente">
+                <a href="./noticia_1.html" target="_blank">Siguiente</a>
             </div>
         </div>
     </main>
