@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario_Cultural:Noticias</title>
-    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <title>Ultimas Noticias</title>
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
-    <script src="../static/js/script.js"></script>
 </head>
 <body>
     <header id="header">
@@ -58,10 +57,18 @@
                 </li>
             </ul>
         </div>
-        <div>
-            <a href="#"><i class="fa fa-instagram iconRedes"></i></a>
-            <a href="#"><i class="fa fa-facebook-square iconRedes"></i></a>
-            <a href="mailto:correo@dominio.com?subject=Asunto del correo&body=Cuerpo del correo"><i class="fa fa-envelope iconRedes"></i></a>
+        <div class="social-media">
+            <div class="share-buttons">
+                <a href="https://www.instagram.com/" id="share-instagram" class="share-button" target="_blank">
+                    <img src="../static/img/instagram.ico" alt="Instagram" class="instagram-icon"></a>
+                <a href="https://www.facebook.com/" id="share-facebook" class="share-button" target="_blank">
+                    <img src="../static/img/facebook.ico" alt="Facebook" class="facebook-icon"></a>
+                <a href="https://web.whatsapp.com/" id="share-whatsapp" class="share-button" target="_blank">
+                    <img src="" alt="WhatsApp" class="whatsapp-icon"></a>
+                <a href="mailto:?subject=Título del correo&body=Contenido del correo" id="share-email" class="share-button" target="_blank">
+                    <img src="" alt="mail" class="email-icon">
+                </a>
+            </div>
         </div>
         <div class="detail">
             <div class="card3">
@@ -89,6 +96,14 @@
         </div>
         <div class="agradecimiento">
             <p>¡Gracias por su colaboración en la construcción de una comunidad cultural más sólida y dinámica!</p><br>
+        </div>
+        <div class="navegacion">
+            <div class="anterior">
+                <a href="./noticia_1.html" target="_blank">Anterior</a>
+            </div>
+            <div class="siguiente">
+                <a href="./noticia_3.html" target="_blank">Siguiente</a>
+            </div>
         </div>
     </main>
     <footer id="footer">
