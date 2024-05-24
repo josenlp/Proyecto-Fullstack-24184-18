@@ -62,12 +62,12 @@ nombre_del_repositorio/
 │
 ├── static
 │   ├── css
-|        ├── style.css              # Estilos CSS
+│        ├── style.css              # Estilos CSS
 │   ├── img                         # Directorio de recursos de imagenes
 │   ├── js
-|        ├── formulario.js          # Validación del formulario y funcionalidad JavaScript
-|        ├── script.js              # Otras funcionalidades de JavaScript
-|
+│        ├── formulario.js          # Validación del formulario y funcionalidad JavaScript
+│        ├── script.js              # Otras funcionalidades de JavaScript
+│
 │── templates
 │   ├── contactanos.html            # Página de contacto   
 │   ├── eventos.html                # Página de eventos
@@ -77,7 +77,7 @@ nombre_del_repositorio/
 │   ├── noticia_3.html              # Página de noticia 3
 │   ├── preguntas_frecuentes.html   # Página de preguntas frecuentes
 │   ├── quienes_somos.html          # Página quienes comos? 
-|
+│
 ├── index.html                      # Archivo principal de la pagina
 ├── README.md                       # Este archivo
 ```
