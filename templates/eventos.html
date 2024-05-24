@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,28 +17,24 @@
     <header id="header">
         <div id="menu">
             <div id="logo" class="logo">
-                <img src="../static/img/logo_cultura_2.png" id="" alt="Logo" class="logo-img">
+                <img src="../static/img/logo_cultura_2.png" id="logo_cultura" alt="Logo" class="logo-img">
             </div>           
             <div id="search-navigation" class="search-navigation">
                 <div class="search-navigation-inner">
                     <nav>
                         <ul class="menu">
-                            <!-- Hipervinculos para el menu -->
                             <li><a href="../index.html">Inicio</a></li>
                             <li><a href="./news.html">Últimas Noticias</a></li>
                             <li><a href="./eventos.html">Eventos Culturales</a></li>                            
                             <li><a href="./contactanos.html">Contactanos</a></li>
                             <li id="search-header" class="search-header">
-                                <form role="search" method="get" class="search-form" action="">
-                                    <label>
-                                        <input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s" />
-                                    </label>
-                                    <li class="search-icon">
-                                        <a href="#">
-                                            <img src="../static/img/lupa.ico" alt="Buscar">
-                                        </a>
-                                    </li>
-                                </form>
+                                <div class="search-container">
+                                    <input type="text" id="searchInput" placeholder="Buscar...">
+                                    <button onclick="searchFiles()" class="search-button">
+                                        <img src="../static/img/lupa.ico" alt="Buscar" class="search-icon">
+                                    </button>
+                                </div>
+                                <div id="searchResults"></div>
                             </li>
                         </ul>
                     </nav>
