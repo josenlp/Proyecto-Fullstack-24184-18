@@ -13,7 +13,6 @@
 5. [Uso](#uso)
 6. [Estructura del Proyecto](#estructura-del-proyecto)
 7. [Contribuciones](#contribuciones)
-8. [Licencia](#licencia)
 
 ## Descripción
 
