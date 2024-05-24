@@ -39,12 +39,12 @@ Este proyecto proporciona una plataforma web para la promoción y difusión de e
 
 1. Clona el repositorio a tu máquina local:
 ```sh
-git clone https://github.com/tu_usuario/nombre_del_repositorio.git
+git clone https://github.com/josenlp/Proyecto-Fullstack-24184-18.git
 ```
 
 2. Navega al directorio del proyecto:
 ```sh
-cd nombre_del_repositorio
+cd Proyecto-Fullstack-24184-18
 ```
 
 ## Uso
