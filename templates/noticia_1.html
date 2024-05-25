@@ -1,95 +1,112 @@
 <!DOCTYPE html>
-<htm lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendario_Cultural:Noticias</title>
-    <link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <title>Ultimas Noticias</title>
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/style.css">
-    <script src="../static/js/script.js"></script>
 </head>
-    <body>
-    <header id="header">
-        <div id="logo" class="logo">
-            <img src="../static/img/logo_cultura_2.png" id="" alt="Logo" class="logo-img">
-        </div>
-        <div id="menu">
-            <div id="search-navigation" class="search-navigation">
-                <div class="search-navigation-inner">
-                    <nav>
-                        <ul class="menu">
-                            <li><a href="../index.html" target="_blank">Inicio</a></li>
-                            <li><a href="../templates/news.html" target="_blank">Ultimas Noticias</a></li>
-                            <li><a href="../templates/eventos.html" target="_blank">Eventos Culturales</a></li>                            
-                            <li><a href="../templates/contactanos.html" target="_blank">Contactanos</a></li>
-                            <li id="search-header" class="search-header">
-                                <div class="search-container">
-                                    <input type="text" id="searchInput" placeholder="Buscar...">
-                                    <button onclick="searchFiles()" class="search-button">
-                                        <img src="../static/img/lupa.ico" alt="Buscar" class="search-icon">
-                                    </button>
-                                </div>
-                                <div id="searchResults"></div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+<body>
+<header id="header">
+    <div id="logo" class="logo">
+        <img src="../static/img/logo_cultura_2.png" id="" alt="Logo" class="logo-img">
+    </div>
+    <div id="menu">
+        <div id="search-navigation" class="search-navigation">
+            <div class="search-navigation-inner">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="../index.html" target="_self">Inicio</a></li>
+                        <li><a href="../templates/news.html" target="_self">Ultimas Noticias</a></li>
+                        <li><a href="../templates/eventos.html" target="_self">Eventos Culturales</a></li>                            
+                        <li><a href="../templates/contactanos.html" target="_self">Contactanos</a></li>
+                        <li id="search-header" class="search-header">
+                            <div class="search-container">
+                                <input type="text" id="searchInput" placeholder="Buscar...">
+                                <button onclick="searchFiles()" class="search-button">
+                                    <img src="../static/img/lupa.ico" alt="Buscar" class="search-icon">
+                                </button>
+                            </div>
+                            <div id="searchResults"></div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <div class="bar">
-            <img src="../static/img/barra_down.png" alt="barra">
+    </div>
+    <div class="bar">
+        <img src="../static/img/barra_down.png" alt="barra">
+    </div>
+    <div class="title">
+        <h1>Últimas Noticias</h1>
+    </div>
+    <div class="bar">
+        <img src="../static/img/barr_up.png" alt="barra">
+    </div>
+</header>
+<main>
+    <div class="note_title">
+        <ul>
+            <li>
+                <h2>Cine Club a beneficio de la Asociación Italiana: esta semana se proyecta “A la hora señalada”</h2>
+            </li>
+        </ul>
+    </div>
+    <div class="detail">
+        <div class="card1">
+            <h4>Género:</h4>
+            <p>Drama – Suspenso – Farwest</p><br>
+            <h4>Dirección:</h4>
+            <p>Fred Zinnemann</p><br>
+            <h4>Duración:</h4>
+            <p>1 hora 25 minutos</p><br>
         </div>
-        <div class="title">
-            <h1>Últimas Noticias</h1>
+        <div class="note_tex">
+            <p>Este miércoles 10 de abril, a las 20:30hs, en la Sala Amankay del Centro Cultural Cotesma, continúa el ciclo de cine auspiciado por el Rotary Club de San Martín de los Andes, con funciones a beneficio de la “Asociación Italiana de San Martín de los Andes”. Presentado y programado por Guillermo Ianniello, el primer ciclo del año lleva el nombre de «El inolvidable cine clásico» y ofrece la proyección de un film imperdible: «A la hora señalada».</p><br>
+            <p>Sólo esto vale para situarla a la altura de las más grandes, pero el tratamiento que se hace del tiempo la colocan entre las mejores películas (no sólo westerns) de toda la historia. El continuo uso de los relojes revela la inminencia del enfrentamiento final entre Cooper y los bandidos, mientras que el desarrollo en tiempo real de la película genera una verdadera angustia en el espectador. En tanto espera la llegada de su rival, Gary intenta sin éxito buscar apoyos. Y le va cambiando la cara a medida que no los encuentra.</p><br>
+            <p>Y entre Cooper, la música y los relojes se va tejiendo una historia excepcional, un cuidado estudio psicológico no sólo del sheriff sino de toda una galería de secundarios, una historia de honestidad, amor, deslealtad y también de soledad, claro. Una historia que se enriquece con los pequeños detalles y que se va cargando de tensión a medida que va faltando menos para que llegue el tren de las 12. Una historia que se disfruta plano a plano. Un clásico de todos los tiempos. Joya absoluta”.</p><br>
         </div>
-        <div class="bar">
-            <img src="../static/img/barr_up.png" alt="barra">
+        <div class="social-media">
+            <div class="share-buttons">
+                <a href="https://www.instagram.com/" id="share-instagram" class="share-button" target="_blank">
+                    <img src="../static/img/instagram.ico" alt="Instagram" class="instagram-icon"></a>
+                <a href="https://www.facebook.com/" id="share-facebook" class="share-button" target="_blank">
+                    <img src="../static/img/facebook.ico" alt="Facebook" class="facebook-icon"></a>
+                <a href="https://web.whatsapp.com/" id="share-whatsapp" class="share-button" target="_blank">
+                    <img src="../static/img/whatsapp.png" alt="WhatsApp" class="whatsapp-icon"></a>
+                <a href="mailto:?subject=Título del correo&body=Contenido del correo" id="share-email" class="share-button" target="_blank">
+                    <img src="../static/img/email_icon.png" alt="mail" class="email-icon">
+                </a>
+            </div>
         </div>
-    </header>
-    <main>
-        <div class="note_title">
-            <ul>
-                <li>
-                    <h2>Cine Club a beneficio de la Asociación Italiana: esta semana se proyecta “A la hora señalada”</h2>
-                </li>
+        <div class="card2">
+            <img src="../static/img/noticias_1.png" alt="foto de pareja en blanco y negro que representa a los protagonistas de la película">
+        </div>
+        <div class="navegacion">
+            <div class="siguiente">
+                <a href="./noticia_2.html" target="_blank">Siguiente</a>
+            </div>
+        </div>
+    </div>
+</main>
+<footer id="footer">
+    <div class="bar">
+        <img src="../static/img/barr_up.png" alt="barra">
+    </div>
+    <div class="menu-footer">
+        <nav>
+            <ul class="menu-footer">
+                <li><a href="./quienes_somos.html">Quienes somos</a></li>
+                <li><a href="./preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+                <li><a href="./contactanos.html">Contacto</a></li>
             </ul>
-        </div>
-        <div class="detail">
-            <div class="card1">
-                <h4>Género:</h4>
-                <p>Drama – Suspenso – Farwest</p><br>
-                <h4>Dirección:</h4>
-                <p>Fred Zinnemann</p><br>
-                <h4>Duración:</h4>
-                <p>1 hora 25 minutos</p><br>
-            </div>
-            <div class="note_tex">
-                <p>Este miércoles 10 de abril, a las 20:30hs, en la Sala Amankay del Centro Cultural Cotesma, continúa el ciclo de cine auspiciado por el Rotary Club de San Martín de los Andes, con funciones a beneficio de la “Asociación Italiana de San Martín de los Andes”. Presentado y programado por Guillermo Ianniello, el primer ciclo del año lleva el nombre de «El inolvidable cine clásico» y ofrece la proyección de un film imperdible: «A la hora señalada».</p><br>
-                <p>Sólo esto vale para situarla a la altura de las más grandes, pero el tratamiento que se hace del tiempo la colocan entre las mejores películas (no sólo westerns) de toda la historia. El continuo uso de los relojes revela la inminencia del enfrentamiento final entre Cooper y los bandidos, mientras que el desarrollo en tiempo real de la película genera una verdadera angustia en el espectador. En tanto espera la llegada de su rival, Gary intenta sin éxito buscar apoyos. Y le va cambiando la cara a medida que no los encuentra.</p><br>
-                <p>Y entre Cooper, la música y los relojes se va tejiendo una historia excepcional, un cuidado estudio psicológico no sólo del sheriff sino de toda una galería de secundarios, una historia de honestidad, amor, deslealtad y también de soledad, claro. Una historia que se enriquece con los pequeños detalles y que se va cargando de tensión a medida que va faltando menos para que llegue el tren de las 12. Una historia que se disfruta plano a plano. Un clásico de todos los tiempos. Joya absoluta”.</p><br>
-            </div>
-            <div class="social-media">
-                <a href="#" target="_blank"><i class="fa fa-instagram iconRedes"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-facebook-square iconRedes"></i></a>
-                <a href="mailto:correo@dominio.com?subject=Asunto del correo&body=Cuerpo del correo" target="_blank"><i class="fa fa-envelope iconRedes"></i></a>
-            </div>
-            <div class="card2">
-                <img src="../static/img/noticias_1.png" alt="foto de pareja en blanco y negro que representa a los protagonistas de la película">
-            </div>
-    </main>
-    
-    <footer>
-        <div class="bar">
-            <img src="../static/img/barra_down.png" alt="barra">
-        </div>
-        
-        <div class="bar">
-            <img src="../static/img/barr_up.png" alt="barra">
-        </div>
-    </footer>
+        </nav>
+    </div>
+</footer>
 </body>
 </html>

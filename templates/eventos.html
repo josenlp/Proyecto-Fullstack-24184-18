@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,28 +17,24 @@
     <header id="header">
         <div id="menu">
             <div id="logo" class="logo">
-                <img src="../static/img/logo_cultura_2.png" id="" alt="Logo" class="logo-img">
+                <img src="../static/img/logo_cultura_2.png" id="logo_cultura" alt="Logo" class="logo-img">
             </div>           
             <div id="search-navigation" class="search-navigation">
                 <div class="search-navigation-inner">
                     <nav>
                         <ul class="menu">
-                            <!-- Hipervinculos para el menu -->
                             <li><a href="../index.html">Inicio</a></li>
-                            <li><a href="./news.html">Ultimas Noticias</a></li>
+                            <li><a href="./news.html">Últimas Noticias</a></li>
                             <li><a href="./eventos.html">Eventos Culturales</a></li>                            
                             <li><a href="./contactanos.html">Contactanos</a></li>
                             <li id="search-header" class="search-header">
-                                <form role="search" method="get" class="search-form" action="">
-                                    <label>
-                                        <input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s" />
-                                    </label>
-                                    <li class="search-icon">
-                                        <a href="#">
-                                            <img src="../static/img/lupa.png" alt="Buscar">
-                                        </a>
-                                    </li>
-                                </form>
+                                <div class="search-container">
+                                    <input type="text" id="searchInput" placeholder="Buscar...">
+                                    <button onclick="searchFiles()" class="search-button">
+                                        <img src="../static/img/lupa.ico" alt="Buscar" class="search-icon">
+                                    </button>
+                                </div>
+                                <div id="searchResults"></div>
                             </li>
                         </ul>
                     </nav>
@@ -48,11 +44,11 @@
         <div class="bar">
             <img src="../static/img/barra_down.png" alt="barra">
         </div>
-        <div id="eventos-culturales">
+        <div class="newsTitle">
             <h1>Eventos Culturales</h1>
         </div>
     </header>
-    
+    <main>
     <!-- botones circulares para seleccionar/cambiar de imagen-->
     <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
@@ -62,7 +58,7 @@
         <span class="dot" onclick="currentSlide(5)"></span>
         <span class="dot" onclick="currentSlide(6)"></span>
     </div>
-    <!-- Slideshow container -->
+    <!-- Carrusel -->
     <div class="slideshow-container">
 
         <div class="imagen-slider fade">
@@ -132,12 +128,20 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    <br>
-    <!-- pie -->
-    <footer>
-        <a href="">Términos y condiciones</a>
-        <a href="">Preguntas frecuentes</a>
-        <a href="">Ayuda</a>
+    </main>
+    <footer id="footer">
+        <div class="bar">
+            <img src="../static/img/barr_up.png" alt="barra">
+        </div>
+        <div class="menu-footer">
+            <nav>
+                <ul class="menu-footer">
+                    <li><a href="./quienes_somos.html">Quienes somos</a></li>
+                    <li><a href="./preguntas_frecuentes.html">Preguntas frecuentes</a></li>
+                    <li><a href="./contactanos.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>
