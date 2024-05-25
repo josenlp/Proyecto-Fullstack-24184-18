@@ -18,7 +18,7 @@
         <div id="menu">
             <div id="logo" class="logo">
                 <a href="../index.html" target="_self"> 
-                <img src="../static/img/logo_cultura_2.png" id="" alt="Logo" class="logo-img">
+                    <img src="../static/img/logo_cultura_2.png" id="logo_cultura" alt="Logo" class="logo-img">
                 </a>
             </div>           
             <div id="search-navigation" class="search-navigation">
@@ -31,16 +31,13 @@
                             <li><a href="./eventos.html" target="_self">Eventos Culturales</a></li>                            
                             <li><a href="./contactanos.html" target="_self">Contactanos</a></li>
                             <li id="search-header" class="search-header">
-                                <form role="search" method="get" class="search-form" action="">
-                                    <label>
-                                        <input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s" />
-                                    </label>
-                                    <li class="search-icon">
-                                        <a href="#">
-                                            <img src="../static/img/lupa.ico" alt="Buscar">
-                                        </a>
-                                    </li>
-                                </form>
+                                <div class="search-container">
+                                    <input type="text" id="searchInput" placeholder="Buscar...">
+                                    <button onclick="searchFiles()" class="search-button">
+                                        <img src="../static/img/lupa.ico" alt="Buscar" class="search-icon">
+                                    </button>
+                                </div>
+                                <div id="searchResults"></div>
                             </li>
                         </ul>
                     </nav>
