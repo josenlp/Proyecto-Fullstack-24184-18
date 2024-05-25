@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./static/css/style.css">
-        <script src="./static/js/script.js"></script>
+        <script src="./static/js/indexCarrousel.js"></script>
     </head>
 <body>
     <header id="header">
@@ -51,18 +51,23 @@
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
         <!-- Carrusel -->
-        <div class="slideshow-container">
+        <div class="slideshow-container-index">
 
-            <div class="imagen-slider fade">
-            <img src="./static/img/1.png" alt="cine">
-            </div>
-        
-            <div class="imagen-slider fade">
-            <img src="./static/img/2.png" alt="importante">
+            <div class="imagen-slider-index fade">
+                <img src="./static/img/3.png" alt="rodaje">
+
             </div>
 
-            <div class="imagen-slider fade">
-            <img src="./static/img/3.png" alt="rodaje">
+            <div class="imagen-slider-index fade hide">
+                <a href="./templates/noticia_1.html" target="_self">    
+                    <img src="./static/img/1.png" alt="cine">
+                </a>
+            </div>
+
+            <div class="imagen-slider-index fade hide">
+                <a href="./templates/noticia_2.html" target="_self">
+                    <img src="./static/img/2.jpg" alt="importante">
+                </a>
             </div>
 
             <!-- Botones hacia adelante y atras -->

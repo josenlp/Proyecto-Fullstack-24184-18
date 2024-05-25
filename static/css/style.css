@@ -28,6 +28,11 @@ header {
 footer {
   width: 100%;
 }
+
+.hide {
+  display: none;
+}
+
 .logo img {
   display: block;
   margin: 0 auto;
@@ -140,6 +145,16 @@ ul.menu-footer li a:hover {
   height: auto;
   width: 100%;
 }
+
+.imagen-slider-index {
+  max-height: 100%; 
+}
+
+.imagen-slider-index img {
+  width: 100%; 
+  height: auto;
+}
+
 .slide {
   position: relative;
   margin-top: 0.52vw;
