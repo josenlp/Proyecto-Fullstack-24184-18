@@ -111,6 +111,19 @@ ul.menu-footer li a:hover {
     cursor: pointer;
 }
 
+.search-icon {
+  margin-right: 0.5rem; /* Espacio entre el campo de búsqueda y el ícono */
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
 
 /*Ultimas Noticias*/
 .newsTitle{

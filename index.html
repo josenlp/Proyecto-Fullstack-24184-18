@@ -10,33 +10,29 @@
         <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./static/css/style.css">
+        <script src="./static/js/script.js"></script>
     </head>
 <body>
     <header id="header">
         <div id="logo" class="logo">
-            <img src="./static/img/logo_cultura_2.png" id="" alt="Logo" class="logo-img">
+            <img src="./static/img/logo_cultura_2.png" id="logo-cultura" alt="Logo" class="logo-img">
         </div> 
         <div id="menu">
-            <div id="logo" class="logo">
-                <img src="" id="" class="" alt="">
-            </div>
             <div id="search-navigation" class="search-navigation">
                 <div class="search-navigation-inner">
                     <nav>
                         <ul class="menu">
-                            <li><a href="./templates/news.html">Últimas Noticias</a></li>
-                            <li><a href="./templates/eventos.html">Eventos Culturales</a></li>
-                            <li><a href="./templates/contactanos.html">Contactos</a></li>
+                            <li><a href="./templates/news.html" target="_self">Últimas Noticias</a></li>
+                            <li><a href="./templates/eventos.html" target="_self">Eventos Culturales</a></li>
+                            <li><a href="./templates/contactanos.html" target="_self">Contactos</a></li>
                             <li id="search-header" class="search-header">
-                                <form role="search" method="get" class="search-form" action="">
+                                <form role="search" method="get" class="search-form">
                                     <label>
-                                        <input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s" />
+                                        <input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s">
                                     </label>
-                                    <li class="search-icon">
-                                        <a href="#">
-                                            <img src="./static/img/lupa.ico" alt="Buscar">
-                                        </a>
-                                    </li>
+                                    <button type="submit" class="search-icon">
+                                        <img src="./static/img/lupa.ico" alt="Buscar">
+                                    </button>
                                 </form>
                             </li>
                         </ul>
@@ -49,39 +45,30 @@
         </div>
     </header>
     <main>
-    <div class="slide">
-        <div class="slide-inner">
-            <input class="slide-open" type="radio" id="slide-1" name="slide" hidden="" checked="checked">
-            <div class="slide-item">
-                <img src="./static/img/1.png"  alt="...">
-            </div>
-            <input class="slide-open" type="radio" id="slide-2" name="slide" hidden="">
-            <div class="slide-item">
-                <img src="./static/img/2.png"  alt="...">
-            </div>
-            <input class="slide-open" type="radio" id="slide-3" name="slide" hidden="">
-            <div class="slide-item">
-                <img src="./static/img/3.png"  alt="...">
-            </div>
-            <label for="slide-3" class="slide-control prev control-1">‹</label>
-            <label for="slide-2" class="slide-control next control-1">›</label>
-            <label for="slide-1" class="slide-control prev control-2">‹</label>
-            <label for="slide-3" class="slide-control next control-2">›</label>
-            <label for="slide-2" class="slide-control prev control-3">‹</label>
-            <label for="slide-1" class="slide-control next control-3">›</label>
-            <ol class="slide-indicador">
-                <li>
-                    <label for="slide-1" class="slide-circulo">•</label>
-                </li>
-                <li>
-                    <label for="slide-2" class="slide-circulo">•</label>
-                </li>
-                <li>
-                    <label for="slide-3" class="slide-circulo">•</label>
-                </li>
-            </ol>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
         </div>
-    </div>
+        <!-- Carrusel -->
+        <div class="slideshow-container">
+
+            <div class="imagen-slider fade">
+            <img src="./static/img/1.png" alt="cine">
+            </div>
+        
+            <div class="imagen-slider fade">
+            <img src="./static/img/2.png" alt="importante">
+            </div>
+
+            <div class="imagen-slider fade">
+            <img src="./static/img/3.png" alt="rodaje">
+            </div>
+
+            <!-- Botones hacia adelante y atras -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
     </main>
     <footer id="footer">
         <div class="bar">
