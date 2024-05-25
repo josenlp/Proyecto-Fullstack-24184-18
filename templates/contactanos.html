@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
-    <script src="../static/js/script.js"></script>
 </head>
 <body>
     <!-- Encabezado -->
@@ -53,84 +53,119 @@
         </div>
     </header>
     <main>
-    <div class="container">
+      <div class="container">
         <form id="miFormulario" method="post">
-          <div class="row">
+            <div class="row">
+                <div class="columna-25">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    <label for="nombre">Nombre *</label>
+                </div>
+                <div class="columna-75">
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="columna-25">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    <label for="apellido">Apellido *</label>
+                </div>
+                <div class="columna-75">
+                    <input type="text" id="apellido" name="apellido" placeholder="Tu apellido..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="columna-25">
+                    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+                    <label for="email">Email *</label>
+                </div>
+                <div class="columna-75">
+                    <input type="text" id="email" name="email" placeholder="Tu email..">
+                </div>
+            </div>
+            <!-- Radiobuttons para seleccionar el género -->
+            <div class="row">
+              <div class="columna-25">
+                  <i class="fa fa-genderless" aria-hidden="true"></i>
+                  <label>Género</label>
+              </div>
+              <div class="columna-75">
+                  <input type="radio" id="masculino" name="genero" value="masculino">
+                  <label for="masculino">Masculino</label>
+                  <input type="radio" id="femenino" name="genero" value="femenino">
+                  <label for="femenino">Femenino</label>
+                  <input type="radio" id="nobinario" name="genero" value="nobinario">
+                  <label for="nobinario">No binario</label>
+                  <input type="radio" id="otroGenero" name="genero" value="otro">
+                  <label for="otroGenero">Otro</label>
+              </div>
+            </div>
+            <div class="row">
+                <div class="columna-25">
+                    <i class="fa fa-globe" aria-hidden="true"></i>
+                    <label for="pais">Pais de Residencia *</label>
+                </div>
+                <div class="columna-75">
+                    <select id="pais" name="pais" onchange="alternarEntradaPais(this)">
+                        <option value="default">Seleccione un pais</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="bolivia">Bolivia</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="chile">Chile</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="ecuador">Ecuador</option>
+                        <option value="españa">España</option>
+                        <option value="italia">Italia</option>
+                        <option value="francia">Francia</option>
+                        <option value="uruguay">Uruguay</option>
+                        <option value="usa">USA</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <!-- Campo de entrada oculto para ingresar un país manualmente -->
+                    <input type="text" id="otroPais" name="otroPais" placeholder="Ingrese el país" style="display: none;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="columna-25">
+                    <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    <label for="comentario">Dejanos tu comentario</label>
+                </div>
+                <div class="columna-75">
+                    <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario aqui.." style="height:200px"></textarea>
+                </div>
+            </div>
+             <!-- Checkbox para aceptar términos y condiciones -->
+            <div class="row">
             <div class="columna-25">
-              <label for="nombre">Nombre</label>
+                <label for="terminos"><i class="fa fa-check-square-o" aria-hidden="true"></i></label>
+                <label for="terminos">Aceptar Términos y Condiciones *</label>
             </div>
             <div class="columna-75">
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..">
+                <input type="checkbox" id="terminos" name="terminos">
             </div>
-          </div>
-          <div class="row">
             <div class="columna-25">
-              <label for="apellido">Apellido</label>
+                <label>* Campos requeridos</label>
             </div>
-            <div class="columna-75">
-              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido..">
             </div>
-          </div>
-          <div class="row">
-            <div class="columna-25">
-              <label for="email">email</label>
+            <div class="button-container">
+                <input type="submit" value="Enviar">
             </div>
-            <div class="columna-75">
-              <input type="text" id="email" name="email" placeholder="Tu email..">
-            </div>
-          </div>
-          <div class="row">
-            <div class="columna-25">
-              <label for="pais">Pais</label>
-            </div>
-            <div class="columna-75">
-              <select id="pais" name="pais" onchange="alternarEntradaPais(this)">
-                <option value="default">Seleccione un pais</option>
-                <option value="argentina">Argentina</option>
-                <option value="bolivia">Bolivia</option>
-                <option value="brasil">Brasil</option>
-                <option value="chile">Chile</option>
-                <option value="colombia">Colombia</option>
-                <option value="ecuador">Ecuador</option>
-                <option value="españa">España</option>
-                <option value="italia">Italia</option>
-                <option value="francia">Francia</option>
-                <option value="uruguay">Uruguay</option>
-                <option value="usa">USA</option>
-                <option value="otro">otro</option>
-              </select>
-              <!-- Campo de entrada oculto para ingresar un país manualmente -->
-              <input type="text" id="otroPais" name="otroPais" placeholder="Ingrese el país" style="display: none;">
-            </div>
-          </div>
-          <div class="row">
-            <div class="columna-25">
-              <label for="comentario">Dejanos tu comentario</label>
-            </div>
-            <div class="columna-75">
-              <textarea id="comentario" name="comentario" placeholder="Escribe tu comentario aqui.." style="height:200px"></textarea>
-            </div>
-          </div>
-          <div class="button-container">
-            <input type="submit" value="Enviar">
-          </div>
-          <div id="error" class="error"></div> <!-- Contenedor para los mensajes de error -->
+            <div id="error" class="error"></div> <!-- Contenedor para los mensajes de error -->
         </form>
-    </div>
+    </div>    
     <div class="contact-info">
-      <div class="contact-column">
-          <img src="../static/img/whatsapp.png" alt="WhatsApp">
-          <p>+123 456 7890</p>
-      </div>
-      <div class="contact-column">
-          <img src="../static/img/email_icon.png" alt="Email">
-          <p>info@espaciocultural.com</p>
-      </div>
-      <div class="contact-column">
-          <img src="../static/img/location_icon.png" alt="Dirección">
-          <p>Gral. Roca 310, San Martín de los Andes, Neuquén</p>
-      </div>
-  </div>
+        <div class="contact-column">
+            <img src="../static/img/whatsapp.png" alt="WhatsApp">
+            <p>+123 456 7890</p>
+        </div>
+        <div class="contact-column">
+            <img src="../static/img/email_icon.png" alt="Email">
+            <p>info@espaciocultural.com</p>
+        </div>
+        <div class="contact-column">
+            <img src="../static/img/location_icon.png" alt="Dirección">
+            <p>Gral. Roca 310, San Martín de los Andes, Neuquén</p>
+        </div>
+    </div>
     </main>
     <footer id="footer">
       <div class="bar">
@@ -146,5 +181,6 @@
           </nav>
       </div>
   </footer>
+  <script src="../static/js/formulario.js"></script>
 </body>
 </html>
