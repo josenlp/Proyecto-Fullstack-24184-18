@@ -452,6 +452,7 @@ ul.menu-footer li a:hover {
     display:flex;
     flex-direction: column;
   }
+
 ul.menu li a {
   align-items: center;
   justify-content: center;
@@ -801,7 +802,7 @@ ul.menu li a {
 }
 
 footer {
-  margin-top: auto; /* Empuja el pie de página hacia abajo */
+  margin-top: auto;
 }
 
 .contact-info {
@@ -839,6 +840,42 @@ footer {
 }
 
 /* Contacto - Formulario */
+.container {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* Columna flotante para etiquetas: ancho del 25% */
+.columna-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  box-sizing: border-box;
+}
+
+/* Columna flotante para entradas: ancho del 75%  */
+.columna-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+  box-sizing: border-box;
+}
+
+
+/* Limpiar despues de las columnas */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 /*  elementos de entrada de texto, select y areas de texto */
 input[type=text], select, textarea{
@@ -872,42 +909,16 @@ input[type=submit] {
 
 /* efecto de hover */
 input[type="submit"]:hover {
-  background-color: #88A843; /* Cambia el color de fondo en hover */
-  color: #f1f1f1; /* Cambia el color del texto en hover */
+  background-color: #88A843;
+  color: #f1f1f1;
 }
 
 .button-container {
   display: flex;
   justify-content: center;
 }
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
 
-/* Columna flotante para etiquetas: ancho del 25% */
-.columna-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-}
-
-/* Columna flotante para entradas: ancho del 75%  */
-.columna-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
-}
-
-/* Limpiar despues de las columnas */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-
-}
-#error{
+.error{
   width: 200px;
   text-align: center;
   color: red;
@@ -917,10 +928,52 @@ input[type="submit"]:hover {
   font-family: "Quicksand", sans-serif;
 }
 
-/* Diseño responsivo */
-@media screen and (max-width: 600px) {
-  .columna-25, .columna-75, input[type=submit] {
-    width: 100%;
-    margin-top: 0;
+/* Media Queries para responsivo */
+
+/* Celular (menor a 768px) */
+@media (max-width: 767px) {
+  .columna-25, .columna-75 {
+      flex: 100%;
+      padding: 0;
+  }
+  .columna-75 {
+      margin-top: 10px;
+  }
+}
+
+/* Tablet (768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+      width: 100%;
+  }
+  .columna-25, .columna-75 {
+      flex: 100%;
+      padding: 0;
+  }
+  .columna-25 {
+      padding-right: 5px;
+  }
+  .columna-75 {
+      padding-left: 5px;
+  }
+}
+
+/* PC de escritorio (1025px a 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+      width: 100%;
+  }
+  .columna-25, .columna-75 {
+      flex: 25%;
+  }
+  .columna-75 {
+      flex: 75%;
+  }
+}
+
+/* PC de escritorio grande (mayor a 1440px) */
+@media (min-width: 1441px) {
+  .container {
+      width: 100%;
   }
 }
