@@ -1,18 +1,19 @@
 <?php
+// para el post en la base de datos desde el formlario
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "culturasmdelosandes";
 
-// Crear conexión
+// Crea la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
+// Verifica la conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Recibir datos del formulario
+// Recibe los datos del formulario
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $email = $_POST['email'];
@@ -20,7 +21,7 @@ $genero = $_POST['genero'];
 $pais = $_POST['pais'];
 $comentario = $_POST['comentario'];
 
-// Insertar datos en la base de datos
+// post de los datos en la base de datos
 $sql = "INSERT INTO usuarios (nombre, apellido, email, genero, pais, comentario)
         VALUES ('$nombre', '$apellido', '$email', '$genero', '$pais', '$comentario')";
 
@@ -30,6 +31,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-// Cerrar conexión
+// Cierra la conexión
 $conn->close();
 ?>
