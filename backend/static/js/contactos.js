@@ -72,6 +72,6 @@ function cargarTotales() {
 }
 
 function eliminarContacto(id) {
-    // Aquí puedes implementar la lógica para eliminar un contacto
+    // Aquí iría lo de eliminar contactos
     console.log(`Eliminando contacto con id ${id}`);
 }
