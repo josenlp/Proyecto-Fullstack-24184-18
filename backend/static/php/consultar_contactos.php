@@ -1,18 +1,20 @@
+
 <?php
+// variables para una base de datos en MySql
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "culturasmdelosandes";
 
-// Crear conexión
+// Crea la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
+// Verifica la conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-// Consultar contactos
+// realiza la consulta
 $sql = "SELECT * FROM usuarios";
 $result = $conn->query($sql);
 
@@ -37,6 +39,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 resultados";
 }
-
+// cierra la conexión
 $conn->close();
 ?>
