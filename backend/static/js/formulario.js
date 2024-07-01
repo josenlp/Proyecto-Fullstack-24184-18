@@ -38,7 +38,7 @@ formRegister.addEventListener("submit", (e) => {
     // Obtener datos del formulario
     let formData = new FormData(formRegister);
 
-    // Enviar datos al servidor usando fetch
+    // Enviar datos al servidor usando fetch (hay que modificar el archivo de acuerdo a como quede)
     fetch('../php/guardar.php', {
         method: 'POST',
         body: formData
