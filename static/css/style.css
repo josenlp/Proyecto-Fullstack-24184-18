@@ -992,3 +992,13 @@ input[type="submit"]:hover {
       width: 100%;
   }
 }
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+iframe {
+  max-width: 90%; 
+}
