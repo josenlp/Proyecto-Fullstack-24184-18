@@ -37,15 +37,32 @@ formRegister.addEventListener("submit", (e) => {
     
     // Obtener datos del formulario
     let formData = new FormData(formRegister);
+    let data = {
+        nombre: formData.get('nombre'),
+        apellido: formData.get('apellido'),
+        email: formData.get('email'),
+        genero: formData.get('genero'),
+        pais: formData.get('pais') === 'otro' ? formData.get('otroPais') : formData.get('pais'),
+        comentario: formData.get('comentario'),
+        terminos: formData.get('terminos') === 'on'
+    };
 
-    // Enviar datos al servidor usando fetch (hay que modificar el archivo de acuerdo a como quede)
-    fetch('../php/guardar.php', {
+    // Enviar datos al servidor usando fetch
+    fetch('/api/contactos', {
         method: 'POST',
-        body: formData
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     })
-    .then(response => response.text())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al enviar los datos');
+        }
+        return response.json();
+    })
     .then(data => {
-        parrafo.innerHTML = data; // Mostrar respuesta del servidor en el párrafo
+        parrafo.innerHTML = 'Datos enviados correctamente';
         formRegister.reset(); // Limpiar formulario si se guardó correctamente
     })
     .catch(error => {

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function cargarContactos() {
-    fetch('http://localhost/tu-proyecto/consultar_contactos.php') // Reemplazar con la URL correcta
+    fetch('/api/contactos') // Reemplazar con la URL correcta
     .then(response => response.json())
     .then(data => {
         const tbody = document.querySelector('#contactosTable tbody');
@@ -35,7 +35,7 @@ function cargarContactos() {
 }
 
 function cargarRankingPaises() {
-    fetch('http://localhost/tu-proyecto/consultar_ranking_paises.php') // Reemplazar con la URL correcta
+    fetch('/api/ranking-paises') // Reemplazar con la URL correcta
     .then(response => response.json())
     .then(data => {
         const rankingList = document.querySelector('#rankingList');
@@ -52,7 +52,7 @@ function cargarRankingPaises() {
 }
 
 function cargarTotales() {
-    fetch('http://localhost/tu-proyecto/consultar_totales.php') // Reemplazar con la URL correcta
+    fetch('/api/totales') // Reemplazar con la URL correcta
     .then(response => response.json())
     .then(data => {
         const totalsRow = document.querySelector('#totalsRow');
