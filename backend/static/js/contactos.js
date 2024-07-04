@@ -42,7 +42,7 @@ function cargarRankingPaises() {
         rankingList.innerHTML = '';
 
         data.forEach(country => {
-            let li = `<li>${country.name} - ${country.rating}</li>`;
+            let li = `<li>${country.pais} - ${country.cantidad}</li>`;
             rankingList.innerHTML += li;
         });
     })
@@ -60,9 +60,10 @@ function cargarTotales() {
 
         let row = `
             <td>${data.totalConsultas}</td>
-            <td>${data.totalMasculino}</td>
-            <td>${data.totalFemenino}</td>
-            <td>${data.totalOtro}</td>
+            <td>${data.masculino}</td>
+            <td>${data.femenino}</td>
+            <td>${data.nobinario}</td>
+            <td>${data.otro}</td>
         `;
         totalsRow.innerHTML = row;
     })

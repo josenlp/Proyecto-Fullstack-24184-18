@@ -1,17 +1,16 @@
 from flask import Flask, jsonify, render_template, request
-import csv
-import os
+import sqlite3
 from datetime import datetime
 
 app = Flask(__name__)
 
-CSV_FILE = 'contactos.csv'
+DATABASE = 'culturasma_db.sqlite'
 
-# Crear el archivo CSV si no existe y agregar los encabezados
-if not os.path.exists(CSV_FILE):
-    with open(CSV_FILE, mode='w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(['id', 'fecha', 'nombre', 'apellido', 'email', 'genero', 'pais', 'comentario', 'resuelto'])
+# Función para conectar a la base de datos
+def get_db_connection():
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row
+    return conn
 
 @app.route('/')
 def index():
@@ -24,67 +23,75 @@ def formulario():
 @app.route('/api/contactos', methods=['GET', 'POST'])
 def contactos():
     if request.method == 'GET':
-        contactos = []
-        with open(CSV_FILE, mode='r') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                contactos.append(row)
-        return jsonify(contactos)
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM usuarios")
+        contactos = cursor.fetchall()
+        conn.close()
+        return jsonify([dict(row) for row in contactos])
     
     if request.method == 'POST':
         data = request.json        
         if not data:
             return jsonify({"error": "Formato JSON inválido"}), 400
-        new_id = 1
-        with open(CSV_FILE, mode='r') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                new_id += 1
 
         fecha = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        with open(CSV_FILE, mode='a', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow([
-                new_id, 
-                fecha, 
-                data.get('nombre'), 
-                data.get('apellido'), 
-                data.get('email'), 
-                data.get('genero'), 
-                data.get('pais', data.get('otroPais', '')), 
-                data.get('comentario', ''), 
-                False
-            ])
+        nuevo_usuario = (
+            data.get('nombre'),
+            data.get('apellido'),
+            data.get('email'),
+            data.get('genero'),
+            data.get('pais', data.get('otroPais', '')),
+            data.get('comentario', '')
+        )
+        
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("""
+            INSERT INTO usuarios (nombre, apellido, email, genero, pais, comentario, fecha)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, (*nuevo_usuario, fecha))
+        conn.commit()
+        conn.close()
+
         return jsonify(data), 201
 
 @app.route('/api/ranking-paises')
 def get_ranking_paises():
-    ranking = "data.get_ranking_paises()"
-    """
-    SELECT pais, COUNT(*) AS cantidad
-FROM usuarios
-GROUP BY pais
-ORDER BY cantidad DESC
-LIMIT 5;
-    """
-    return jsonify(ranking)
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT pais, COUNT(*) AS cantidad
+        FROM usuarios
+        GROUP BY pais
+        ORDER BY cantidad DESC
+        LIMIT 5
+    """)
+    ranking = cursor.fetchall()
+    conn.close()
+    return jsonify([dict(row) for row in ranking])
 
 @app.route('/api/totales')
 def get_totales():
-    total_consultas = 0
-    total_mes = 0
-    current_month = datetime.now().strftime('%Y-%m')
-    with open(CSV_FILE, mode='r') as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            total_consultas += 1
-            if row['fecha'].startswith(current_month):
-                total_mes += 1
+    conn = get_db_connection()
+    cursor = conn.cursor()
     
-    totales = {
-        "totalConsultas": total_consultas,
-        "totalMes": total_mes
-    }
+    # Consulta para obtener el total de cada género
+    cursor.execute("SELECT genero, COUNT(*) as total FROM usuarios GROUP BY genero")
+    totales_genero = cursor.fetchall()
+
+    # Consulta para obtener el total general de usuarios
+    cursor.execute("SELECT COUNT(*) as total FROM usuarios")
+    total_general = cursor.fetchone()[0]
+    
+    conn.close()
+
+    # Formatear los resultados en un diccionario
+    totales = {row['genero']: row['total'] for row in totales_genero}
+    totales['totalConsultas'] = total_general
+    
+    print(totales)
+
     return jsonify(totales)
 
 if __name__ == '__main__':
