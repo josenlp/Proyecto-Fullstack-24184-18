@@ -22,6 +22,7 @@ function cargarContactos() {
                     <td>${contacto.pais}</td>
                     <td>${contacto.comentario}</td>
                     <td>
+                        <button onclick="eliminarContacto(${contacto.id})">Modificar</button>
                         <button onclick="eliminarContacto(${contacto.id})">Eliminar</button>
                     </td>
                 </tr>
@@ -33,6 +34,9 @@ function cargarContactos() {
         console.error('Error al cargar contactos:', error);
     });
 }
+document.getElementById('btnAgregar').addEventListener('click', function() {
+    window.location.href = '../../templates/contactanos.html';
+});
 
 function cargarRankingPaises() {
     fetch('/api/ranking-paises') // Reemplazar con la URL correcta
@@ -72,6 +76,31 @@ function cargarTotales() {
 }
 
 function eliminarContacto(id) {
-    // Aquí iría lo de eliminar contactos
-    console.log(`Eliminando contacto con id ${id}`);
+    fetch(`/api/contactos/${id}`, {// reemplazar con el correcto
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(`Contacto con id ${id} eliminado`);
+            const tbody = document.querySelector('#contactosTable tbody');
+            const tr = tbody.querySelector(`tr[data-id="${id}"]`);
+            if (tr) {
+                tbody.removeChild(tr);
+            } else {
+                console.warn(`No se encontró el contacto con id ${id} en la interfaz.`);
+            }
+        })
+    .catch(error => {
+        console.error('Error al eliminar contacto:', error);
+    });
 }
+function modificarContacto(id) {
+    console.log(`Modificando contacto con id ${id}`);
+    window.location.href = `/templates/modificar-contacto.html?id=${id}`;
+}
+
