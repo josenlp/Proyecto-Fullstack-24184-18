@@ -20,6 +20,10 @@ def index():
 def formulario():
     return render_template('contactanos.html')
 
+@app.route('/modificar-contacto.html')
+def modificar_contacto():
+    return render_template('modificar-contacto.html')
+
 @app.route('/api/contactos', methods=['GET', 'POST'])
 def contactos():
     if request.method == 'GET':
@@ -55,6 +59,41 @@ def contactos():
         conn.close()
 
         return jsonify(data), 201
+
+
+@app.route('/api/contactos/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+def contacto_detalle(id):
+    if request.method == 'GET':
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM usuarios WHERE id = ?", (id,))
+        contacto = cursor.fetchone()
+        conn.close()
+        if contacto is None:
+            return jsonify({"error": "Contacto no encontrado"}), 404
+        return jsonify(dict(contacto))
+
+    if request.method == 'PUT':
+        data = request.form
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("""
+            UPDATE usuarios
+            SET nombre = ?, apellido = ?, email = ?, genero = ?, pais = ?, comentario = ?
+            WHERE id = ?
+        """, (data['nombre'], data['apellido'], data['email'], data['genero'], data['pais'], data.get('comentario', ''), id))
+        conn.commit()
+        conn.close()
+
+        return jsonify({"message": "Contacto actualizado correctamente."}), 200
+    
+    if request.method == 'DELETE':
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM usuarios WHERE id = ?", (id,))
+        conn.commit()
+        conn.close()
+        return jsonify({"message": "Contacto eliminado correctamente."}), 200
 
 @app.route('/api/ranking-paises')
 def get_ranking_paises():
