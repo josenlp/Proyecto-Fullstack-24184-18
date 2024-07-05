@@ -385,6 +385,11 @@ input[type="submit"]:hover {
 .ranking li:last-child, .totales tr:last-child {
   border-bottom: none;
 }
+
+.totales th{
+  padding: 20px;
+}
+
 /* botones */
 .buttons-container { 
   margin-left: 55rem;
