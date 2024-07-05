@@ -22,7 +22,7 @@ function cargarContactos() {
                     <td>${contacto.pais}</td>
                     <td>${contacto.comentario}</td>
                     <td>
-                        <button onclick="eliminarContacto(${contacto.id})">Modificar</button>
+                        <button onclick="modificarContacto(${contacto.id})">Modificar</button>
                         <button onclick="eliminarContacto(${contacto.id})">Eliminar</button>
                     </td>
                 </tr>
@@ -35,7 +35,7 @@ function cargarContactos() {
     });
 }
 document.getElementById('btnAgregar').addEventListener('click', function() {
-    window.location.href = '../../templates/contactanos.html';
+    window.location.href = '/formulario';
 });
 
 function cargarRankingPaises() {
@@ -46,7 +46,7 @@ function cargarRankingPaises() {
         rankingList.innerHTML = '';
 
         data.forEach(country => {
-            let li = `<li>${country.name} - ${country.rating}</li>`;
+            let li = `<li>${country.pais} - ${country.cantidad}</li>`;
             rankingList.innerHTML += li;
         });
     })
@@ -64,9 +64,10 @@ function cargarTotales() {
 
         let row = `
             <td>${data.totalConsultas}</td>
-            <td>${data.totalMasculino}</td>
-            <td>${data.totalFemenino}</td>
-            <td>${data.totalOtro}</td>
+            <td>${data.masculino}</td>
+            <td>${data.femenino}</td>
+            <td>${data.nobinario}</td>
+            <td>${data.otro}</td>
         `;
         totalsRow.innerHTML = row;
     })
@@ -76,17 +77,18 @@ function cargarTotales() {
 }
 
 function eliminarContacto(id) {
-    fetch(`/api/contactos/${id}`, {// reemplazar con el correcto
-        method: 'DELETE'
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(`Contacto con id ${id} eliminado`);
+    if (confirm('¿Estás seguro de que deseas eliminar este contacto?')) {
+        fetch(`/api/contactos/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(`Contacto con id ${id} eliminado`);
             const tbody = document.querySelector('#contactosTable tbody');
             const tr = tbody.querySelector(`tr[data-id="${id}"]`);
             if (tr) {
@@ -94,13 +96,17 @@ function eliminarContacto(id) {
             } else {
                 console.warn(`No se encontró el contacto con id ${id} en la interfaz.`);
             }
+            alert('Contacto eliminado correctamente.');
         })
-    .catch(error => {
-        console.error('Error al eliminar contacto:', error);
-    });
+        .catch(error => {
+            console.error('Error al eliminar contacto:', error);
+            alert('Error al eliminar contacto. Por favor, intenta nuevamente.');
+        });
+    }
 }
+
 function modificarContacto(id) {
     console.log(`Modificando contacto con id ${id}`);
-    window.location.href = `/templates/modificar-contacto.html?id=${id}`;
+    window.location.href = `/modificar-contacto.html?id=${id}`;
 }
 

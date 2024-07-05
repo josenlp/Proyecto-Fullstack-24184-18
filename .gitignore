@@ -1,0 +1,4 @@
+backend/__pycache__
+backend/helpers_db.py
+backend/prueba_bd.ipynb
+backend/culturasmdelosandes.sql
