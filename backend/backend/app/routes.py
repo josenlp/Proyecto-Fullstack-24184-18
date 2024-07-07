@@ -1,12 +1,9 @@
-from flask import Flask, jsonify, render_template, request
+from flask import current_app as app, jsonify, render_template, request
 import sqlite3
 from datetime import datetime
 
-app = Flask(__name__)
+DATABASE = 'database/culturasma_db.sqlite'
 
-DATABASE = 'culturasma_db.sqlite'
-
-# Función para conectar a la base de datos
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
@@ -23,6 +20,34 @@ def formulario():
 @app.route('/modificar-contacto.html')
 def modificar_contacto():
     return render_template('modificar-contacto.html')
+
+@app.route('/quienes_somos')
+def quienes_somos():
+    return render_template('quienes_somos.html')
+
+@app.route('/preguntas_frecuentes')
+def preguntas_frecuentes():
+    return render_template('preguntas_frecuentes.html')
+
+@app.route('/noticia_3')
+def noticia_3():
+    return render_template('noticia_3.html')
+
+@app.route('/noticia_2')
+def noticia_2():
+    return render_template('noticia_2.html')
+
+@app.route('/noticia_1')
+def noticia_1():
+    return render_template('noticia_1.html')
+
+@app.route('/news')
+def news():
+    return render_template('news.html')
+
+@app.route('/eventos')
+def eventos():
+    return render_template('eventos.html')
 
 @app.route('/api/contactos', methods=['GET', 'POST'])
 def contactos():
@@ -60,7 +85,6 @@ def contactos():
 
         return jsonify(data), 201
 
-
 @app.route('/api/contactos/<int:id>', methods=['GET', 'PUT', 'DELETE'])
 def contacto_detalle(id):
     if request.method == 'GET':
@@ -75,7 +99,6 @@ def contacto_detalle(id):
 
     if request.method == 'PUT':
         data = request.form
-        print("Datos recibidos:", data)
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
@@ -116,23 +139,15 @@ def get_totales():
     conn = get_db_connection()
     cursor = conn.cursor()
     
-    # Consulta para obtener el total de cada género
     cursor.execute("SELECT genero, COUNT(*) as total FROM usuarios GROUP BY genero")
     totales_genero = cursor.fetchall()
 
-    # Consulta para obtener el total general de usuarios
     cursor.execute("SELECT COUNT(*) as total FROM usuarios")
     total_general = cursor.fetchone()[0]
     
     conn.close()
 
-    # Formatear los resultados en un diccionario
     totales = {row['genero']: row['total'] for row in totales_genero}
     totales['totalConsultas'] = total_general
-    
-    print(totales)
 
     return jsonify(totales)
-
-if __name__ == '__main__':
-    app.run(debug=True)
