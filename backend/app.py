@@ -75,6 +75,7 @@ def contacto_detalle(id):
 
     if request.method == 'PUT':
         data = request.form
+        print("Datos recibidos:", data)
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
