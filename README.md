@@ -16,7 +16,7 @@
 
 ## Descripción
 
-Este proyecto proporciona una plataforma web para la promoción y difusión de eventos culturales y noticias relacionadas con la cultura en San Martín de los Andes. La página web permite a los usuarios encontrar información sobre eventos próximos, leer noticias culturales y obtener detalles sobre la comunidad cultural local.
+Este proyecto proporciona una plataforma web para la promoción y difusión de eventos culturales y noticias relacionadas con la cultura en San Martín de los Andes. La página web permite a los usuarios encontrar información sobre eventos próximos, leer noticias culturales y obtener detalles sobre la comunidad cultural local. El proyecto se encuentra funcionando en [netlify](https://culturasmdelosandes.netlify.app/)
 
 ## Características
 
@@ -46,7 +46,7 @@ git clone https://github.com/josenlp/Proyecto-Fullstack-24184-18.git
 cd Proyecto-Fullstack-24184-18
 ```
 
-## Uso
+## Uso para ver solo el frontend
 Abre el archivo index.html en tu navegador web preferido.
 ```sh
 open index.html
@@ -55,19 +55,19 @@ open index.html
 Esto cargará la página principal de la plataforma, donde podrás navegar por las diferentes secciones, como noticias, eventos, y más.
 Asegúrate de estar conectado a internet para cargar los iconos de Font Awesome correctamente.
 
-## Estructura del Proyecto
+## Estructura del Proyecto (frontend)
 ```bash
 nombre_del_repositorio/
 │
-├── static
+├── static/
 │   ├── css
 │        ├── style.css              # Estilos CSS
-│   ├── img                         # Directorio de recursos de imagenes
-│   ├── js
+│   ├── img/                         # Directorio de recursos de imagenes
+│   ├── js/
 │        ├── formulario.js          # Validación del formulario y funcionalidad JavaScript
 │        ├── script.js              # Otras funcionalidades de JavaScript
 │
-│── templates
+│── templates/
 │   ├── contactanos.html            # Página de contacto   
 │   ├── eventos.html                # Página de eventos
 │   ├── news.html                   # Página principal de noticias
@@ -80,20 +80,30 @@ nombre_del_repositorio/
 ├── index.html                      # Archivo principal de la pagina
 ├── README.md                       # Este archivo
 ```
-## Contribuciones
-¡Las contribuciones son bienvenidas! Si deseas contribuir, por favor sigue estos pasos:
 
-1. Haz un fork del proyecto.
-2. Crea una rama con tu nueva funcionalidad
-```sh
-git checkout -b feature/nueva-funcionalidad
+# Backend
+
+El proyecto incluye el deploy de una api en flask que gestiona los comentarios y consultas de los usuarios. Esta se encuentra dentro de la carpeta Backend. Este desarrollo se encuentra hosteado en [PythonAnywhere](https://culturasm.pythonanywhere.com/)
+
+## Estructura del Proyecto (Backend incluido)
+Dentro de la carpeta backend se encuentra la siguiente estructura.
+
+
+```bash
+backend/
+├── backend/
+│ ├── app/
+│ │ ├── static/
+│ │ │ ├── css/
+│ │ │ └── js/
+│ │ ├── templates/
+│ │ ├── init.py
+│ │ ├── routes.py
+│ │ ├── models.py
+│ ├── database/
+│ │ └── culturasma_db.sqlite
+│ ├── config.py
+│ ├── wsgi.py
+│ └── requirements.txt
+└── README.md
 ```
-3. Realiza los cambios necesarios y confirma los cambios.
-```sh
-git commit -m 'Añadir nueva funcionalidad'
-```
-4. Sube los cambios a tu repositorio.
-```sh
-git push origin feature/nueva-funcionalidad
-```
-5. Abre un Pull Request en el repositorio original.

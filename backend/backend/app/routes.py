@@ -27,9 +27,9 @@ def eventos():
 def lista_contactos():
     return render_template('lista_contactos.html')
 
-@main.route('/modificar-contactos')
-def modificar_contactos():
-    return render_template('modificar-contactos.html')
+@main.route('/modificar-contacto')
+def modificar_contacto():
+    return render_template('modificar-contacto.html')
 
 @main.route('/news')
 def news():

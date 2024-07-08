@@ -107,6 +107,6 @@ function eliminarContacto(id) {
 
 function modificarContacto(id) {
     console.log(`Modificando contacto con id ${id}`);
-    window.location.href = `/modificar-contacto.html?id=${id}`;
+    window.location.href = `/modificar-contacto?id=${id}`;
 }
 
