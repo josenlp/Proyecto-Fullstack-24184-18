@@ -16,8 +16,8 @@
 
 ## Descripción
 
-Este proyecto proporciona una plataforma web para la promoción y difusión de eventos culturales y noticias relacionadas con la cultura en San Martín de los Andes. La página web permite a los usuarios encontrar información sobre eventos próximos, leer noticias culturales y obtener detalles sobre la comunidad cultural local. El proyecto se encuentra funcionando en [netlify](https://culturasmdelosandes.netlify.app/)
-
+Este proyecto proporciona una plataforma web para la promoción y difusión de eventos culturales y noticias relacionadas con la cultura en San Martín de los Andes. La página web permite a los usuarios encontrar información sobre eventos próximos, leer noticias culturales y obtener detalles sobre la comunidad cultural local. El proyecto frontend se encuentra funcionando en [netlify](https://culturasmdelosandes.netlify.app/) y el que tiene incluido el backend en [PythonAnywhere](https://culturasm.pythonanywhere.com/)
+ 
 ## Características
 
 - **Listado de Eventos**: Información detallada sobre eventos culturales próximos en San Martín de los Andes.
