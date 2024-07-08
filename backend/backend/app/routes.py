@@ -1,55 +1,61 @@
-from flask import current_app as app, jsonify, render_template, request
+from flask import current_app as app, jsonify, render_template, request, Blueprint
 import sqlite3
 from datetime import datetime
 
 DATABASE = 'database/culturasma_db.sqlite'
+
+main = Blueprint('main', __name__)
 
 def get_db_connection():
     conn = sqlite3.connect(DATABASE)
     conn.row_factory = sqlite3.Row
     return conn
 
-@app.route('/')
+@main.route('/')
 def index():
-    return render_template('lista_contactos.html')
+    return render_template('index.html')
 
-@app.route('/formulario')
-def formulario():
+@main.route('/contactanos')
+def contactanos():
     return render_template('contactanos.html')
 
-@app.route('/modificar-contacto.html')
-def modificar_contacto():
-    return render_template('modificar-contacto.html')
-
-@app.route('/quienes_somos')
-def quienes_somos():
-    return render_template('quienes_somos.html')
-
-@app.route('/preguntas_frecuentes')
-def preguntas_frecuentes():
-    return render_template('preguntas_frecuentes.html')
-
-@app.route('/noticia_3')
-def noticia_3():
-    return render_template('noticia_3.html')
-
-@app.route('/noticia_2')
-def noticia_2():
-    return render_template('noticia_2.html')
-
-@app.route('/noticia_1')
-def noticia_1():
-    return render_template('noticia_1.html')
-
-@app.route('/news')
-def news():
-    return render_template('news.html')
-
-@app.route('/eventos')
+@main.route('/eventos')
 def eventos():
     return render_template('eventos.html')
 
-@app.route('/api/contactos', methods=['GET', 'POST'])
+@main.route('/lista_contactos')
+def lista_contactos():
+    return render_template('lista_contactos.html')
+
+@main.route('/modificar-contactos')
+def modificar_contactos():
+    return render_template('modificar-contactos.html')
+
+@main.route('/news')
+def news():
+    return render_template('news.html')
+
+@main.route('/noticia_1')
+def noticia_1():
+    return render_template('noticia_1.html')
+
+@main.route('/noticia_2')
+def noticia_2():
+    return render_template('noticia_2.html')
+
+@main.route('/noticia_3')
+def noticia_3():
+    return render_template('noticia_3.html')
+
+@main.route('/preguntas_frecuentes')
+def preguntas_frecuentes():
+    return render_template('preguntas_frecuentes.html')
+
+@main.route('/quienes_somos')
+def quienes_somos():
+    return render_template('quienes_somos.html')
+
+@main.route('/api/contactos', methods=['GET', 'POST'])
 def contactos():
     if request.method == 'GET':
         conn = get_db_connection()
@@ -85,7 +91,7 @@ def contactos():
 
         return jsonify(data), 201
 
-@app.route('/api/contactos/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+@main.route('/api/contactos/<int:id>', methods=['GET', 'PUT', 'DELETE'])
 def contacto_detalle(id):
     if request.method == 'GET':
         conn = get_db_connection()
@@ -119,7 +125,7 @@ def contacto_detalle(id):
         conn.close()
         return jsonify({"message": "Contacto eliminado correctamente."}), 200
 
-@app.route('/api/ranking-paises')
+@main.route('/api/ranking-paises')
 def get_ranking_paises():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -134,7 +140,7 @@ def get_ranking_paises():
     conn.close()
     return jsonify([dict(row) for row in ranking])
 
-@app.route('/api/totales')
+@main.route('/api/totales')
 def get_totales():
     conn = get_db_connection()
     cursor = conn.cursor()

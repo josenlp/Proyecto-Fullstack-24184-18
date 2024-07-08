@@ -5,7 +5,8 @@ def create_app():
     app.config.from_object('config.Config')
 
     with app.app_context():
-        from . import routes
+        from .routes import main
+        app.register_blueprint(main)
 
     return app
 

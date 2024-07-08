@@ -35,7 +35,7 @@ function cargarContactos() {
     });
 }
 document.getElementById('btnAgregar').addEventListener('click', function() {
-    window.location.href = '/formulario';
+    window.location.href = '/contactanos';
 });
 
 function cargarRankingPaises() {

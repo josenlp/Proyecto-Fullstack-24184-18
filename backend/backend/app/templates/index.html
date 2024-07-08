@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendario Cultural de San Martín de Los Andes</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Young+Serif&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Caveat:wght@400;700&family=Quicksand:wght@300..700&family=Young+Serif&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+<body>
+    <header id="header">
+        <div id="logo" class="logo">
+            <a href="{{ url_for('main.index') }}" target="_self">
+            <img src="{{ url_for('static', filename='img/logo_cultura_2.png') }}" id="logo-cultura" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div id="menu">
+            <div id="search-navigation" class="search-navigation">
+                <div class="search-navigation-inner">
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="{{ url_for('main.news') }}" target="_self">Últimas Noticias</a></li>
+                            <li><a href="{{ url_for('main.eventos') }}" target="_self">Eventos Culturales</a></li>
+                            <li><a href="{{ url_for('main.contactanos') }}" target="_self">Contactanos</a></li>
+                            <li id="search-header" class="search-header">
+                                <form role="search" method="get" class="search-form">
+                                    <label>
+                                        <input type="search" class="search-field" placeholder="Buscar &hellip;" value="" name="s">
+                                    </label>
+                                    <button type="submit" class="search-icon">
+                                        <img src="{{ url_for('static', filename='img/lupa.ico') }}" alt="Buscar">
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bar">
+            <img src="{{ url_for('static', filename='img/barra_down.png') }}" alt="barra">
+        </div>
+    </header>
+    <main>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <!-- Carrusel -->
+        <div class="slideshow-container-index">
+
+            <div class="imagen-slider-index fade">
+                <a href="{{ url_for('main.eventos') }}" target="_self">
+                <img src="{{ url_for('static', filename='img/3.png') }}" alt="rodaje">
+                </a>
+            </div>
+
+            <div class="imagen-slider-index fade hide">
+                <a href="{{ url_for('main.noticia_1') }}" target="_self">
+                    <img src="{{ url_for('static', filename='img/1.png') }}" alt="cine">
+                </a>
+            </div>
+
+            <div class="imagen-slider-index fade hide">
+                <a href="{{ url_for('main.noticia_2') }}" target="_self">
+                    <img src="{{ url_for('static', filename='img/2.jpg') }}" alt="importante">
+                </a>
+            </div>
+
+            <!-- Botones hacia adelante y atras -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="bar">
+            <img src="{{ url_for('static', filename='img/barr_up.png') }}" alt="barra">
+        </div>
+        <div class="menu-footer">
+            <nav>
+                <ul class="menu-footer">
+                    <li><a href="{{ url_for('main.quienes_somos') }}">Quienes somos</a></li>
+                    <li><a href="{{ url_for('main.preguntas_frecuentes') }}">Preguntas frecuentes</a></li>
+                    <li><a href="{{ url_for('main.contactanos') }}">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/indexCarrousel.js') }}"></script>
+</body>
+</html>
+
