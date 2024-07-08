@@ -1,6 +1,6 @@
 # Proyecto Backend Codo a Codo
 
-El proyecto incluye el deploy de una api en flask que gestiona los comentarios y consultas de los usuarios. Esta se encuentra dentro de la carpeta Backend. Este desarrollo se encuentra hosteado en [PythonAnywhere](https://culturasm.pythonanywhere.com/)
+El proyecto incluye el deploy de una api en flask que gestiona los comentarios y consultas de los usuarios. Esta se encuentra dentro de la carpeta Backend. Este desarrollo se encuentra hosteado en [PythonAnywhere](https://culturasm.pythonanywhere.com/).
 
 ## Estructura del Proyecto
 
